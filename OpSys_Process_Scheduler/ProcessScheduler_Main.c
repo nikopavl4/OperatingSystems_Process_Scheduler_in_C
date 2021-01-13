@@ -41,16 +41,16 @@ int main() {
     for (x=0;x<tasks;x++){
 	total_burst_limit = total_burst_limit + p_list[x].process_time;
 	}
-	
    	printf("Επιλέξτε τι θέλετε να κάνετε:\n");
     printf("+\t (1) Προσομοίωση για FCFS\t\t\t\t\t\t+\n");
     printf("+\t (2) Προσομοίωση για PP\t\t\t\t\t\t\t+\n");
     printf("+\t (3) Προσομοίωση για SRTF\t\t\t\t\t\t+\n");
 	printf("+\t (4) Προσομοίωση για RR\t\t\t\t\t\t\t+\n");
 	printf("+\t (5) Εκτύπωση συνοπτικών αποτελεσμάτων για όλους τους αλγορίθμους\t+\n");
-	printf("Πληκτρολογήστε την επιλογή σας (1 - 5): ");
+	printf("+\t (0) Έξοδος από το πρόγραμμα\t\t\t\t\t\t+\n");
+	printf("Πληκτρολογήστε την επιλογή σας (0 - 5): ");
     scanf("%d", &choice);
-    
+    do{
 	//Queue, Clock & Arrays Initialization
     int ready_queue[tasks];
     int front=-1;
@@ -76,8 +76,8 @@ int main() {
 			
 			//Run a Virtual CPU Simulation
 			allDead=0;
-			printf("++ Virtual CPU Simulation is Starting ++\n");
-			printf("==================================\n");
+			printf("++ Virtual CPU Simulation for FCFS is Starting ++\n");
+			printf("=============================================\n");
 			printf("time \t");
 			for(n=0;n<tasks;n++){
 			printf("P%d\t",n+1);
@@ -98,8 +98,8 @@ int main() {
 			
 			//Run a Virtual CPU Simulation
 			allDead=0;
-			printf("++ Virtual CPU Simulation is Starting ++\n");
-			printf("==================================\n");
+			printf("++ Virtual CPU Simulation for PP is Starting ++\n");
+			printf("=============================================\n");
 			printf("time \t");
 			for(n=0;n<tasks;n++){
 			printf("P%d\t",n+1);
@@ -120,8 +120,8 @@ int main() {
 			
 			//Run a Virtual CPU Simulation
 			allDead=0;
-			printf("++ Virtual CPU Simulation is Starting ++\n");
-			printf("==================================\n");
+			printf("++ Virtual CPU Simulation for SRTF is Starting ++\n");
+			printf("=============================================\n");
 			printf("time \t");
 			for(n=0;n<tasks;n++){
 			printf("P%d\t",n+1);
@@ -142,8 +142,8 @@ int main() {
 			
 			//Run a Virtual CPU Simulation
 			allDead=0;
-			printf("++ Virtual CPU Simulation is Starting ++\n");
-			printf("==================================\n");
+			printf("++ Virtual CPU Simulation for RR is Starting ++\n");
+			printf("=============================================\n");
 			printf("time \t");
 			for(n=0;n<tasks;n++){
 			printf("P%d\t",n+1);
@@ -226,6 +226,15 @@ int main() {
 			scanf("%d", &choice);
 			
 	}
-
+	printf("Επιλέξτε τι θέλετε να κάνετε:\n");
+    printf("+\t (1) Προσομοίωση για FCFS\t\t\t\t\t\t+\n");
+    printf("+\t (2) Προσομοίωση για PP\t\t\t\t\t\t\t+\n");
+    printf("+\t (3) Προσομοίωση για SRTF\t\t\t\t\t\t+\n");
+	printf("+\t (4) Προσομοίωση για RR\t\t\t\t\t\t\t+\n");
+	printf("+\t (5) Εκτύπωση συνοπτικών αποτελεσμάτων για όλους τους αλγορίθμους\t+\n");
+	printf("+\t (0) Έξοδος από το πρόγραμμα\t\t\t\t\t\t+\n");
+	printf("Πληκτρολογήστε την επιλογή σας (0 - 5): ");
+    scanf("%d", &choice);
+}while(choice!=0);
    
 }

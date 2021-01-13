@@ -122,10 +122,10 @@ void rr_detailed( Process p_list[], int n, int swaps[],int death_time[])
     }  
     
     //Calculate & Display Average Times
-	int avg_waiting_time=(float)total_wt / (float)n; 
-    int avg_turnaround_time=(float)total_tat / (float)n; 
-    printf("Average waiting time = %d \n",avg_waiting_time); 
-    printf("Average turn around time = %d \n",avg_turnaround_time);  
+	float avg_waiting_time=(float)total_wt / (float)n; 
+    float avg_turnaround_time=(float)total_tat / (float)n; 
+    printf("Average waiting time = %0.2f \n",avg_waiting_time); 
+    printf("Average turn around time = %0.2f \n",avg_turnaround_time);  
 } 
 
 void rr_summarized(Process p_list[], int clock, int n, int ready_queue[], int *front, int *rear,int *allDead,int life[],int *quantum, int myquantum)

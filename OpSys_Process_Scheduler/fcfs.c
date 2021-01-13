@@ -1,5 +1,3 @@
-//#include "fcfs.h"
-
 //FCFS CPU Run Function
 void fcfs_run(Process p_list[], int clock, int n, int ready_queue[], int *front, int *rear,int *allDead,int swaps[],int life[], int death_time[])
 {
@@ -70,31 +68,6 @@ void fcfs_run(Process p_list[], int clock, int n, int ready_queue[], int *front,
 	
 }
 
-////Calculate Waiting Time for Each Process - Function
-//void calculateWaitingTime(Process p_list[], int n, int burst_time[], int waiting_time[])  
-//{  
-//    // waiting time for first process is 0  
-//    waiting_time[0] = 0;  
-//    
-//    // calculating waiting time
-//	int i;  
-//    for (i = 1; i < n ; i++ )  {
-//    waiting_time[i] =  burst_time[i-1] + waiting_time[i-1] - p_list[i].arrival_time + p_list[i-1].arrival_time;
-//    if(waiting_time[i]<0){
-//    	waiting_time[i] = 0;
-//	}
-//	}
-//
-//}  
-//    
-////Calculate TurnAround Time for Each Process - Function
-//void calculateTurnAroundTime( Process p_list[], int n, int burst_time[], int waiting_time[], int turnaround_time[])  
-//{  
-//    // calculating turnaround time
-//	int i; 
-//    for (i = 0; i < n ; i++)  
-//        turnaround_time[i] = burst_time[i] + waiting_time[i];  
-//}  
     
 //Function to calculate FCFS Average Times and Print Detailed Results 
 void fcfs_detailed( Process p_list[], int n, int swaps[],int death_time[])  
@@ -141,10 +114,10 @@ void fcfs_detailed( Process p_list[], int n, int swaps[],int death_time[])
     }  
     
     //Calculate & Display Average Times
-	int avg_waiting_time=(float)total_wt / (float)n; 
-    int avg_turnaround_time=(float)total_tat / (float)n; 
-    printf("Average waiting time = %d \n",avg_waiting_time); 
-    printf("Average turn around time = %d \n",avg_turnaround_time);  
+	float avg_waiting_time=(float)total_wt / (float)n; 
+    float avg_turnaround_time=(float)total_tat / (float)n; 
+    printf("Average waiting time = %0.2f \n",avg_waiting_time); 
+    printf("Average turn around time = %0.2f \n",avg_turnaround_time);  
 } 
 
 void fcfs_summarized(Process p_list[], int clock, int n, int ready_queue[], int *front, int *rear,int *allDead,int life[])
