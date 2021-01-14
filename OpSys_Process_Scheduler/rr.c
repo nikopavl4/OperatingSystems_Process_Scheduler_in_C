@@ -73,7 +73,7 @@ void rr_run(Process p_list[], int clock, int n, int ready_queue[], int *front, i
   
    //Print CPU Outputs
   	printf("%d \t",clock);
-	for (m=0;m<=n;m++){
+	for (m=0;m<n;m++){
 		printf("%c \t",printables[m]);
 	}
 	printf("\n");
